@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡COMUNICATE CON NOSOTROS!</title>
+    <style>
+    body{
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }   
+    h2 {
+        color:blue;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .container{
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+    .datos{
+        color:blueviolet;
+        padding: 15px;
+    }
+    .error {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>REGISTRATE</h1>
+    <form id="formulario" style="color: gray;">¡Deja tus datos y nos comunicaremos contigo lo mas pronto posible!</form><br>
+    <div class="datos">
+        <label for="nombre">NOMBRES:</label><br>
+        <input type="text" id="nombre" placeholder="Ingresa tus nombres">
+    </div><br>
+    <div class="datos">
+        <label for="apellido">APELLIDOS:</label><br>
+        <input type="text" id="apellido" placeholder="Ingresa tus apellidos">
+    </div><br>
+    <div class="datos">
+        <label for="fechaNacimiento">FECHA DE NACIMIENTO:</label><br>
+        <input type="date" id="fechaNacimiento">
+    </div><br>
+    <div class="datos">
+        <label for="celular">CELULAR:</label><br>
+        <input type="text" id="telefono" placeholder="Ingresa tu numero de celular(9 digitos)">
+    </div><br>
+    <div class="datos">
+        <label for="correo">CORREO ELECTRONICO:</label><br>
+        <input type="email" id="correo" placeholder="Ingresa tu correo electronico">
+    </div><br>
+    <div class="datos">
+        <label for="identidad">DOCUMENTO DE IDENTIDAD:</label><br>
+        <input type="text" id="dni" placeholder="Ingresa tu documento de identidad">
+    </div><br>
+    <button onclick="javascript= validar();">Enviar</button>
+    </form>
+    <div id="mensajeError" class="error"></div>
+    </div>
+    <script>
+        function validar(){
+            var nombre=parseFloat(document.getElementById("nombre").value);
+            var apellido=parseFloat(document.getElementById("apellido").value);
+            var fechaNacimiento=parseFloat(document.getElementById("fechaNacimiento").value);
+            var telefono=parseFloat(document.getElementById("telefono").value);
+            var correo=parseFloat(document.getElementById("correo").value);
+            var dni=parseFloat(document.getElementById("dni").value);
+
+            if(!nombre || !apellido || !fechaNacimiento || !telefono || !correo || !dni){
+                document.getElementById("mensajeError").textContent = "TODOS LOS CAMPOS DEBEN DE SER RELLENADOS DE FORMA OBLIGATORIA.";
+                return false;
+            }
+            if(telefono.length !== 9){
+                document.getElementById("mensajeError").textContent = "EL TELEFONO DEBE DE TENER SOLO 9 DIGITOS.";
+                return false;
+            }
+            if(isNaN(telefono)){
+                document.getElementById("mensajeError").textContent = "EL NUMERO DE CELULAR SOLO DEBE DE CONTENER NUMEROS.";
+                return false;
+            }
+            if(dni.length !== 8){
+                document.getElementById("mensajeError").textContent = "EL DNI DEBE DE TENER SOLO 8 DIGITOS.";
+                return false;
+            }
+            if(isNaN(dni)){
+            document.getElementById("mensajeError").textContent = "EL NUMERO DE DOCUMENTO DE IDENTIDAD SOLO DEBE DE CONTENER NUMEROS.";
+            return false;
+            }
+            else{
+                window.alert("EL FORMULARIO HA SIDO ENVIADO DE FORMA EXITOSA. <br> AGRADECEMOS SU PARTICIPACION.");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
