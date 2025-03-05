@@ -72,12 +72,12 @@
     </div>
     <script>
         function validar(){
-            var nombre=parseFloat(document.getElementById("nombre").value);
-            var apellido=parseFloat(document.getElementById("apellido").value);
-            var fechaNacimiento=parseFloat(document.getElementById("fechaNacimiento").value);
-            var telefono=parseFloat(document.getElementById("telefono").value);
-            var correo=parseFloat(document.getElementById("correo").value);
-            var dni=parseFloat(document.getElementById("dni").value);
+            var nombre=(document.getElementById("nombre").value);
+            var apellido=(document.getElementById("apellido").value);
+            var fechaNacimiento=(document.getElementById("fechaNacimiento").value);
+            var telefono=(document.getElementById("telefono").value);
+            var correo=(document.getElementById("correo").value);
+            var dni=(document.getElementById("dni").value);
 
             if(!nombre || !apellido || !fechaNacimiento || !telefono || !correo || !dni){
                 document.getElementById("mensajeError").textContent = "TODOS LOS CAMPOS DEBEN DE SER RELLENADOS DE FORMA OBLIGATORIA.";
